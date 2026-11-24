@@ -1,0 +1,22 @@
+# Python 3.13 (tested with the "trioma" conda env)
+# Install with: pip install -r requirements.txt
+
+# TRIOMA itself, pinned to origin/main (v0.1.10): BreedingBlanket with Q_plasma,
+# CustomTurbulator, and the corrected GLC solver (get_c_out_GLC_lm/ms).
+# The older e86b41c commit lacks the GLC fixes.
+TRIOMA @ git+https://github.com/gabriele-ferrero/TRIOMA.git@f0cb474
+
+# Scientific stack (TRIOMA dependencies + notebooks)
+numpy>=2.2,<3
+scipy>=1.15
+matplotlib>=3.10,<4
+sympy>=1.14
+
+# Notebook execution
+ipykernel>=6.30
+nbconvert>=7.16
+
+# COMSOL scripting from Python (notebooks in COMSOL/, Pipe_Verification/, Transient_Studies/)
+# Needs a local COMSOL Multiphysics install (tested with 6.3) and a Java runtime found by JPype
+MPh>=1.2.4
+JPype1>=1.5
